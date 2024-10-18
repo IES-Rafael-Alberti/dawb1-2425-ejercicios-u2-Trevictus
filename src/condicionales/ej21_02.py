@@ -8,7 +8,7 @@ def pedir_contrasenia():
 
 
 def comprobar_pass(password: str) -> bool:
-    return password == CONTRASENIA
+    return password.lower() == CONTRASENIA.lower()
 
 
 def main():
