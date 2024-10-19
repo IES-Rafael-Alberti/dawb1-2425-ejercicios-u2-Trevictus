@@ -10,7 +10,7 @@ from src.condicionales.ej21_02 import *
         ("contraseña", "contraseña")
     ]
 )
-def test_pedir_contrania(mock_input, expected, monkeypatch):
+def test_pedir_contrasenia(mock_input, expected, monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: mock_input)
     assert pedir_contrasenia() == expected
 

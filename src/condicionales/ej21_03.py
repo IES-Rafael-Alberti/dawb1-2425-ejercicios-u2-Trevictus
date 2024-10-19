@@ -5,6 +5,7 @@ numeros = []
 
 def pedir_numeros()-> list:
     cont = 0
+    numeros = []
     while cont < 2:
         try:
             numero = float(input("Ingresa un nº: "))
