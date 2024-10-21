@@ -10,8 +10,26 @@
 # 
 # Escribir un programa que lea la puntuación del usuario e indique su nivel de rendimiento, así como la cantidad de dinero que recibirá el usuario.
 
+NIVELES = "inaceptable", "aceptable", "meritorio"
+puntuacion = 0.0, 0.4, 0.6
+
+def leer_puntuacion():
+    return float(input("¿Cuál es tu puntuación?\n"))
+
+def cuantia(puntuacion: float)-> str:
+    beneficio = puntuacion * 2400
+    if puntuacion == 0.0:
+        return f"con la puntuacion de {puntuacion} obtienes de beneficio {beneficio}"
+    elif puntuacion == 0.4:
+        return f"con la puntuacion de {puntuacion} obtienes de beneficio {beneficio}"
+    else:
+        return f"con la puntuacion de {puntuacion} obtienes de beneficio {beneficio}"
+
+
 def main():
-    return
+    puntuacion = leer_puntuacion()
+    beneficio = cuantia(puntuacion)
+    print(beneficio)
 
 if __name__ == "__main__":
     main()
