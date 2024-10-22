@@ -7,6 +7,7 @@ from src.condicionales.ej21_01 import *
         (' 1 0', None),   # Número positivo válido
         ('-5', -5),     # Número negativo válido
         ('0', 0),       # Número cero
+        ('palabra', None), 
     ]
 )
 def test_preguntar_edad(mock_input, expected, monkeypatch):
