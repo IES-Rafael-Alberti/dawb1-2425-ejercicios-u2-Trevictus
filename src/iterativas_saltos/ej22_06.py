@@ -9,8 +9,17 @@
 # *****
 
 
+def pedir_numero():
+    return int(input("Introduce un nº entero: "))
+
+def mostrar_triangulo(altura: int):
+    for i in range(1, altura + 1):
+        print('*' * i)
+
 def main():
-    return
+    altura = pedir_numero()
+    mostrar_triangulo(altura)
+
 
 if __name__ == "__main__":
     main()
