@@ -20,7 +20,7 @@ def validar_par_impar(numero: int)-> bool:
     
 def crear_piramide(numero: int):
     vacio = ""
-    if numero % 2 == 0:
+    if validar_par_impar(numero):
         for i in range(0, numero + 1, 2):
             vacio = str(i) + " " + vacio
             print(vacio)
