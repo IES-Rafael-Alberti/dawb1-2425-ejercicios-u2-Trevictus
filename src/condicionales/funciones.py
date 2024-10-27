@@ -14,3 +14,14 @@ def pedir_numero():
 def clear():
     if name == 'nt':
         _ = system('cls')
+
+
+#Funcion que valida si es un numero
+def validar_numero():
+    encontrar_fin = False
+    while not encontrar_fin:
+        try:
+            numero = float(input("Ingresa nº: "))
+            return numero
+        except ValueError:
+            print("Entrada no válida.")
