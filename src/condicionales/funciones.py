@@ -11,7 +11,7 @@ def pedir_numero():
 
 
 # Funcion para limpiar la consola
-def clear():
+def borar_consola():
     if name == 'nt':
         _ = system('cls')
 

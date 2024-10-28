@@ -8,27 +8,27 @@ from os import system, name
 def menu():
     listado = ("Goma", "Lápiz", "Papel")
     finalizar = False
-    clear()
+    borar_consola()
     while not finalizar:
         try:   
             opcion = int(input("Ingresa opción:\n1-> Comenzar programa.\n2-> Imprimir listado.\n3-> Finalizar programa.\n=>"))
             if opcion == 1:
-                clear()
+                borar_consola()
                 print( "Programa comenzado.")
             elif opcion == 2:
-                clear()
+                borar_consola()
                 print( f"El listado es el siguiente: {", ".join(listado)}")
             elif opcion == 3:
-                clear()
+                borar_consola()
                 print("Aaaadios!")
                 finalizar = True
             else:
                 raise ValueError("ERROR. Ingresa una opción")
         except ValueError as _:
-            clear()
+            borar_consola()
             print(f"ERROR. Ingresa una opción válida")
 
-def clear():
+def borar_consola():
     if name == 'nt':
         _ = system('cls')
 

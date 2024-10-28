@@ -5,7 +5,13 @@
 # Si el cliente es menor de 4 años puede entrar gratis, si tiene entre 4 y 18 años debe pagar 5€ y si es mayor de 18 años, 10€.
 
 def preguntar_edad():
-    return float(input("¿Cuál es tu edad?\n"))
+    num = None
+    try:
+        num = float(input("¿Cuál es tu edad?"))
+    except:
+        print("*ERROR*")
+
+    return num
 
 def asignar_precio_entrada(edad: float)-> str:
     if edad < 4:
