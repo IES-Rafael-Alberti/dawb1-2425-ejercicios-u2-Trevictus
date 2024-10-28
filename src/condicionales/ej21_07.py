@@ -8,8 +8,13 @@
 # Más de 60000€ 	45%
 # Escribir un programa que pregunte al usuario su renta anual y muestre por pantalla el tipo impositivo que le corresponde.
 
-def preguntar_renta_anual():
-    return float(input("¿Cuál es tu renta anual?\n"))
+def preguntar_renta_anual()-> float:
+    renta = None
+    try:
+        renta = float(input("¿Cuál es tu renta anual?\n"))
+    except ValueError:
+        print("ERROR.")
+    return renta
 
 def mostrar_tipo_impositivo(cuantia: float)-> str:
     if cuantia < 10000:
@@ -25,9 +30,12 @@ def mostrar_tipo_impositivo(cuantia: float)-> str:
 
 
 def main():
-    cuantia = preguntar_renta_anual()
-    tipo_impositivo = mostrar_tipo_impositivo(cuantia)
-    print(tipo_impositivo)
+    try:    
+        cuantia = preguntar_renta_anual()
+        tipo_impositivo = mostrar_tipo_impositivo(cuantia)
+        print(tipo_impositivo)
+    except Exception as e:
+        print(f"se produjo un error inesperado: {e}")
 
 if __name__ == "__main__":
     main()

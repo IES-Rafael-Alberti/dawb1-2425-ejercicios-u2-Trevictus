@@ -11,7 +11,7 @@ def preguntar_nombre():
 def preguntar_sexo():
     return input("¿Cuál es tu sexo?\n")
 
-def asignar_clase(nombre, sexo):
+def asignar_clase(nombre, sexo):    
     letra = nombre[0]
     if sexo == "mujer":
         if letra.lower() in LETRA_MUJER_GRUPO_A:

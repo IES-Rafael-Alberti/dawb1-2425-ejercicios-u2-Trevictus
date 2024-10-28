@@ -3,13 +3,24 @@
 Escribir un programa que pregunte al usuario su edad y sus ingresos mensuales y muestre por pantalla si el usuario tiene que tributar o no."""
 
 def preguntar_edad():
-    return int(input("¿Cuál es tu edad?\n"))
+    num = None
+    try:
+        num = int(input("¿Cuál es tu edad?"))
+    except:
+        print("*ERROR*")
+
+    return num
 
 def preguntar_ingresos():
-    return float(input("¿Cuales son tus ingresos mensuales?\n"))
+    num = None
+    try:
+        num = float(input("¿Cuales son tus ingresos mensuales?\n"))
+    except:
+        print("ERROR")
+    return num
 
 def mostrar_tributacion(edad, ingresos)-> str:
-    if edad < 16:
+    if edad < 16 or ingresos < 1000:
         return "No tributas"
     elif edad >= 16 and ingresos >= 1000:
         return "Tributas"
