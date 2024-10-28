@@ -14,16 +14,25 @@ NIVELES = "inaceptable", "aceptable", "meritorio"
 puntuacion = 0.0, 0.4, 0.6
 
 def leer_puntuacion():
-    return float(input("¿Cuál es tu puntuación?\n"))
+    try:
+        puntuacion = float(input("¿Cuál es tu puntuación?\n"))
+    except ValueError:
+        print("ERROR. Introduce un nº.")
+    return puntuacion
 
 def cuantia(puntuacion: float)-> str:
     beneficio = puntuacion * 2400
-    if puntuacion == 0.0:
-        return f"con la puntuacion de {puntuacion} obtienes de beneficio {beneficio}"
-    elif puntuacion == 0.4:
-        return f"con la puntuacion de {puntuacion} obtienes de beneficio {beneficio}"
+    maximo_ben = 0.6 * 2400
+    if 0.0 < puntuacion < 0.4:
+        return f"con la puntuacion de {puntuacion} y un rendimiento {NIVELES[0]} obtienes de beneficio {beneficio}"
+    elif 0.4 <= puntuacion < 0.6:
+        return f"con la puntuacion de {puntuacion} y un rendimiento {NIVELES[1]} obtienes de beneficio {beneficio}"
+    elif puntuacion == 0.6:
+        return f"con la puntuacion de {puntuacion} y un rendimiento {NIVELES[2]} obtienes de beneficio {beneficio}"
+    elif puntuacion >= 0.6:
+        return f"con la puntuacion de {puntuacion} y un rendimiento {NIVELES[2]} obtienes de beneficio {maximo_ben}"
     else:
-        return f"con la puntuacion de {puntuacion} obtienes de beneficio {beneficio}"
+        return "ERROR. Puntuación inválida."
 
 
 def main():
