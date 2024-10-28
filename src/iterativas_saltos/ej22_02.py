@@ -2,7 +2,13 @@
 # Escribir un programa que pregunte al usuario su edad y muestre por pantalla todos los años que ha cumplido (desde 1 hasta su edad).
 
 def preguntar_edad():
-    return int(input("¿Cuál es tu edad?\n"))
+    num = None
+    try:
+        num = int(input("¿Cuál es tu edad?"))
+    except:
+        print("*ERROR*")
+
+    return num
 
 def mostrar_anios_cumplidos(edad: int):
     vacio = ""

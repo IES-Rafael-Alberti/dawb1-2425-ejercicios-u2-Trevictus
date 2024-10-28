@@ -2,7 +2,14 @@
 # Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas.
 
 def pedir_numero():
-    return int(input("Introduce un nº entero positivo: "))
+    try:
+        numero = int(input("Introduce un nº entero positivo: "))
+        if numero <= 0:
+            raise ValueError("El nº debe ser entero positivo.")
+        return numero
+    except ValueError as e:
+        print(f"ERROR. {e}.")
+        return pedir_numero()
 
 def cuenta_atras(numero: int):
     numeros = []
