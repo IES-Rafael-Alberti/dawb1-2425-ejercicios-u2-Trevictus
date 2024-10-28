@@ -3,8 +3,27 @@
 # Si el carácter no coincide, indicar que no hay coincidencia en esa posición (imprimiendo la posición) y continuar. 
 # Si se encuentra una coincidencia, indicar en qué posición se encontró y finalizar la ejecución.
 
+def pedir_cadena():
+    cadena = input("Ingresa una frase: ")
+    return cadena
+
+def pedir_letra():
+    letra = input("Ingresa una letra: ")
+    return letra
+
+def recorrer_frase(cadena, letra_encontrar):
+    for i, letra in enumerate(cadena):
+        if letra == letra_encontrar:
+            print(f"Existe la letra {letra_encontrar} en indice {i}.")
+        else:
+            print(f"No hay coincidencia en {i}")
+
+
+
 def main():
-    return
+    cadena = pedir_cadena()
+    letra = pedir_letra()
+    recorrer_frase(cadena, letra)
 
 if __name__ == "__main__":
     main()
