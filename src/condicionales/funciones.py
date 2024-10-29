@@ -1,4 +1,5 @@
-from os import system, name
+import os 
+import platform
 import time 
 
 # Funcion para introducir decimales
@@ -13,8 +14,11 @@ def pedir_numero():
 
 # Funcion para limpiar la consola
 def borar_consola():
-    if name == 'nt':
-        _ = system('cls')
+    sistema = platform.system() 
+    if sistema == "Windows": 
+        os.system('cls') 
+    else: 
+        os.system('clear')
 
 
 #Funcion que valida si es un numero
