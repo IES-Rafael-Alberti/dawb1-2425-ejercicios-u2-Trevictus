@@ -1,4 +1,5 @@
 from os import system, name
+import time 
 
 # Funcion para introducir decimales
 def pedir_numero():
@@ -25,3 +26,10 @@ def validar_numero():
             return numero
         except ValueError:
             print("Entrada no válida.")
+
+
+
+print("Esto se imprimirá primero.") 
+time.sleep(2) # Pausa la ejecución durante 2 segundos 
+print("Esto se imprimirá después de 2 segundos.")
+borar_consola()
