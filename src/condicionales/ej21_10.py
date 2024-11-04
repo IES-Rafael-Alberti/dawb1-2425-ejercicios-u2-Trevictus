@@ -15,15 +15,15 @@ ingredientes_no_vegetarianos = ("peperoni", "jamon", "salmon")
 ingredientes_basicos = ["mozzarella", "tomate"]
 
 
-def preguntar(respuesta):
-        respuesta = int(input("Marque 1 si quiere pizza vegetariana, o 2 si es el caso contrario:\n"))
-        if respuesta == 1:
+def preguntar():
+        respuesta = input("Marque 1 si quiere pizza vegetariana, o 2 si es el caso contrario:\n")
+        if respuesta == "1":
             return "Vegetariana"
-        elif respuesta == 2:
+        elif respuesta == "2":
             return "No vegetariana"
         else:
-            print("Error, elija entre el 1 y el 2")
-        return respuesta
+            return "Error, elija entre el 1 y el 2"
+        
         
     
 def menu(tipo):
